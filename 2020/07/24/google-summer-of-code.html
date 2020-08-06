@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <html lang="en-US">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>
+     Intelligent Alert system for HEP experiments
+    
+  </title>
+  <meta
+    name="description"
+    content="
+     
+    "
+  />
+
+  <link rel="icon" href="./assets/favicon.ico"
+  type="image/x-icon"> <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./assets/css/main.css">
+  <link rel="stylesheet" href="./assets/css/syntax.css">
+
+  <!-- Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+  />
+
+  <!-- Fonts -->
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=PT+Serif&display=swap"
+  />
+
+  <!-- SEO Plugin -->
+  <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Intelligent Alert system for HEP experiments | Rahul Indra</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Intelligent Alert system for HEP experiments" />
+<meta name="author" content="Rahul Indra" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="The project aims to develop an intelligent and reliable monitoring system for large distributed services to monitor their status and reduce operational costs. The distributed computing infrastructure is the backbone of all computing activities of the CMS experiments at CERN. These distributed services include central services for authentication, workload management, data management, databases, etc." />
+<meta property="og:description" content="The project aims to develop an intelligent and reliable monitoring system for large distributed services to monitor their status and reduce operational costs. The distributed computing infrastructure is the backbone of all computing activities of the CMS experiments at CERN. These distributed services include central services for authentication, workload management, data management, databases, etc." />
+<link rel="canonical" href="http://localhost:4000/2020/07/24/google-summer-of-code.html" />
+<meta property="og:url" content="http://localhost:4000/2020/07/24/google-summer-of-code.html" />
+<meta property="og:site_name" content="Rahul Indra" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-07-24T00:00:00+05:30" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Intelligent Alert system for HEP experiments" />
+<meta name="twitter:site" content="@RahulIndra12" />
+<meta name="twitter:creator" content="@Rahul Indra" />
+<script type="application/ld+json">
+{"dateModified":"2020-07-24T00:00:00+05:30","datePublished":"2020-07-24T00:00:00+05:30","@type":"BlogPosting","headline":"Intelligent Alert system for HEP experiments","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2020/07/24/google-summer-of-code.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000./assets/img/cern/gsoc_cern.png"},"name":"Rahul Indra"},"url":"http://localhost:4000/2020/07/24/google-summer-of-code.html","author":{"@type":"Person","name":"Rahul Indra"},"description":"The project aims to develop an intelligent and reliable monitoring system for large distributed services to monitor their status and reduce operational costs. The distributed computing infrastructure is the backbone of all computing activities of the CMS experiments at CERN. These distributed services include central services for authentication, workload management, data management, databases, etc.","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  <!-- Google Analytics -->
+  
+  <!-- End Google Analytics -->
+
+  <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-firestore.js"></script>
+  <link
+    href="https://unpkg.com/webkul-micron@1.1.6/dist/css/micron.min.css"
+    type="text/css"
+    rel="stylesheet"
+  />
+  <script
+    src="https://unpkg.com/webkul-micron@1.1.6/dist/script/micron.min.js"
+    type="text/javascript"
+  ></script>
+</html>
+
+  </head>
+
+  <body>
+    <div class="container">
+      <header id="header">
+	<div id = site_title>
+		<a href="/">
+			
+			<h1>GSOC'20 with CERN-HSF !</h1>
+			
+		</a>
+	</div>
+	<div id="subheader">
+		
+		<nav class="social">
+			<div style="display: flex;">
+  
+    <a style="margin-right: 5px;" href="https://www.github.com/indrarahul2013" target="_blank" id="https://img.icons8.com/color/48/000000/github.png"><img src="https://img.icons8.com/color/48/000000/github.png" width="30" /></a>
+  
+    <a style="margin-right: 5px;" href="https://twitter.com/RahulIndra12" target="_blank" id="https://img.icons8.com/fluent/48/000000/twitter.png"><img src="https://img.icons8.com/fluent/48/000000/twitter.png" width="30" /></a>
+  
+    <a style="margin-right: 5px;" href="https://www.linkedin.com/in/indrarahul/" target="_blank" id="https://img.icons8.com/color/48/000000/linkedin.png"><img src="https://img.icons8.com/color/48/000000/linkedin.png" width="30" /></a>
+  
+    <a style="margin-right: 5px;" href="mailto:indrarahul2013@gmail.com" target="_blank" id="https://img.icons8.com/fluent/48/000000/gmail.png"><img src="https://img.icons8.com/fluent/48/000000/gmail.png" width="30" /></a>
+  
+    <a style="margin-right: 5px;" href="/feed.xml" target="_blank" id="https://img.icons8.com/color/48/000000/rss.png"><img src="https://img.icons8.com/color/48/000000/rss.png" width="30" /></a>
+  
+</div>
+		</nav>
+		
+	</div>
+</header>
+
+      <div class="post-container">
+        <article id="post">
+          <h2 id="post-title">Intelligent Alert system for HEP experiments</h2>
+
+          
+          <div class="post-info">
+            <span>
+              <i class="far fa-calendar" aria-hidden="true"></i>
+              <span>24 Jul 2020</span> -
+              <i class="far fa-clock"></i> 
+
+
+  
+  
+    10 minute read
+  
+
+            </span>
+          </div>
+           <p><img width="700px" src="./assets/img/cern/gsoc_cern.png" /> <br>
+The project aims to develop an intelligent and reliable monitoring system for large distributed services to monitor their status and reduce operational costs. The distributed computing infrastructure is the backbone of all computing activities of the CMS experiments at CERN. These distributed services include central services for authentication, workload management, data management, databases, etc.</p>
+
+<p>Very large amounts of information are produced from this infrastructure. These include various anomalies, issues, outages, and those involving scheduled maintenance. The sheer volume and variety of information make it too large to be handled by the operational team. Hence we aim to build an intelligent system that will detect, analyze and predict the abnormal behaviors of the infrastructure.</p>
+
+<p>Quick Links :-</p>
+
+<div class="lnk" style="display:flex;">
+
+<div><a style="margin-right:10px; text-decoration:none;" target="_blank" href="https://summerofcode.withgoogle.com/projects/#4648545665155072">GSOC</a></div>
+
+<div><a style="margin-right:10px; text-decoration:none;" target="_blank" href="https://github.com/dmwm/CMSMonitoring">CMSMonitoring</a></div>
+
+<div><a style="margin-right:10px; text-decoration:none;" target="_blank" href="https://docs.google.com/document/d/1ATRWZLzsexHgdx73_PFwNGIUrUaudskSJ-FYnyZOHHw/edit?usp=sharing">GSOC Progress Report</a></div>
+
+</div>
+
+<ul id="markdown-toc">
+  <li><a href="#problem" id="markdown-toc-problem">Problem</a></li>
+  <li><a href="#solution" id="markdown-toc-solution">Solution</a></li>
+  <li><a href="#proposed-architecture" id="markdown-toc-proposed-architecture">Proposed Architecture</a></li>
+  <li><a href="#parsers" id="markdown-toc-parsers">Parsers</a>    <ul>
+      <li><a href="#ggus" id="markdown-toc-ggus">GGUS</a></li>
+      <li><a href="#ssb" id="markdown-toc-ssb">SSB</a></li>
+    </ul>
+  </li>
+  <li><a href="#alerting-module" id="markdown-toc-alerting-module">Alerting Module</a>    <ul>
+      <li><a href="#building-blocks" id="markdown-toc-building-blocks">Building Blocks</a></li>
+    </ul>
+  </li>
+  <li><a href="#alerting-service" id="markdown-toc-alerting-service">Alerting Service</a></li>
+  <li><a href="#alertmanager---one-place-for-all-alerts" id="markdown-toc-alertmanager---one-place-for-all-alerts">AlertManager - one place for all alerts</a></li>
+  <li><a href="#use-of-slack--karma" id="markdown-toc-use-of-slack--karma">Use of Slack &amp; Karma</a>    <ul>
+      <li><a href="#slack" id="markdown-toc-slack">Slack</a></li>
+      <li><a href="#karma" id="markdown-toc-karma">Karma</a></li>
+    </ul>
+  </li>
+  <li><a href="#intelligence-module" id="markdown-toc-intelligence-module">Intelligence Module</a>    <ul>
+      <li><a href="#building-blocks-1" id="markdown-toc-building-blocks-1">Building Blocks</a></li>
+      <li><a href="#tools" id="markdown-toc-tools">Tools</a></li>
+      <li><a href="#fetch-alerts" id="markdown-toc-fetch-alerts">Fetch Alerts</a></li>
+      <li><a href="#preprocessing" id="markdown-toc-preprocessing">Preprocessing</a></li>
+      <li><a href="#keyword-matching" id="markdown-toc-keyword-matching">Keyword Matching</a></li>
+      <li><a href="#add-annotations" id="markdown-toc-add-annotations">Add Annotations</a></li>
+      <li><a href="#push-alert" id="markdown-toc-push-alert">Push Alert</a></li>
+      <li><a href="#silence-alert" id="markdown-toc-silence-alert">Silence Alert</a></li>
+    </ul>
+  </li>
+  <li><a href="#alert-cli-tool" id="markdown-toc-alert-cli-tool">Alert CLI Tool</a></li>
+  <li><a href="#tools-used" id="markdown-toc-tools-used">Tools Used</a></li>
+  <li><a href="#acknowledgements" id="markdown-toc-acknowledgements">Acknowledgements</a>    <ul>
+      <li><a href="#mentor-details" id="markdown-toc-mentor-details">Mentor details</a></li>
+      <li><a href="#contact-me" id="markdown-toc-contact-me">Contact Me</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="problem">Problem</h2>
+
+<p>“The growth of distributed services introduces a challenge to properly monitor their status and reduce operational costs.”</p>
+
+<p>The current monitoring system makes use of following tools :-</p>
+<ul>
+  <li>ElasticSearch</li>
+  <li>Kafka</li>
+  <li>Grafana</li>
+  <li>Prometheus</li>
+  <li>AlertManager</li>
+  <li>VictoriaMetrics</li>
+  <li>Custom Solutions like GGUS, SSB system etc.</li>
+</ul>
+
+<p>CMS infrastructure can produce significant amount of data on :-</p>
+<ul>
+  <li>various anomalies</li>
+  <li>intermittent problems</li>
+  <li>outages</li>
+  <li>scheduled maintenance.</li>
+</ul>
+
+<p>The operational teams deal with a large amount of alert notifications and tickets and generally they face difficulties in handling them manually.</p>
+
+<p>So, in short we need to automate the mundane process which allows op-teams to focus more on the finding solution for the source of alerts rather than searching, filtering and collecting the alerts and tickets.</p>
+
+<h2 id="solution">Solution</h2>
+<p>We propose an intelligent alert management system for the aforementioned problem.</p>
+
+<p>Aims</p>
+
+<ul>
+  <li>detect tickets</li>
+  <li>analyse tickets</li>
+  <li>spot anomalies in tickets (if any)</li>
+  <li>silence false alerts</li>
+  <li>automate operation procedures</li>
+</ul>
+
+<p>The system’s abilities include, but are not limited to :-</p>
+<ul>
+  <li>Consuming tickets from various ticketing systems. (GGUS &amp; SSB have been implemented).But being a modular architecture, there’s always a scope to add more services in future.</li>
+  <li>Extracting alerts which are relevant to the specific CMS services which gets affected by such interventions.</li>
+  <li>Intelligently grouping and ranking of the alerts.</li>
+  <li>Silencing false alerts from services which starts bombarding the system when a node goes down. So instead of logging multiple alerts from the services running on that node. We generate one single alert annotating that a specific node is down.</li>
+  <li>Making them visible in the monitoring tools such as Grafana, Slack, Karma etc.</li>
+</ul>
+
+<h2 id="proposed-architecture">Proposed Architecture</h2>
+
+<div style="display: flex; flex-direction: column; align-items: center;">
+<img src="./assets/img/cern/full_arch2.png" alt="drawing" width="700px" />
+<span>Full Architecture</span>
+</div>
+
+<p>The above diagram depicts the proposed architecture of the Intelligent Alert Management System.</p>
+
+<p>The components which I developed are :-</p>
+<ul>
+  <li>Parser</li>
+  <li>Alerting Module</li>
+  <li>Alerting Service</li>
+  <li>Intelligence Module</li>
+  <li>Alert CLI Tool</li>
+</ul>
+
+<p>Third-party tools being used are :-</p>
+
+<ul>
+  <li>Grafana</li>
+  <li>Prometheus</li>
+  <li>AlertManager</li>
+  <li>Slack</li>
+  <li>Karma</li>
+</ul>
+
+<p>Each developed components are the building blocks of the intelligent system. Let us discuss their implementation, features one by one.</p>
+
+<h2 id="parsers">Parsers</h2>
+
+<p>AlertManager is an extensive tool for storing alerts from various sources. Prometheus, Grafana are the two most supported tools for AlertManager where you can simply define alert rules and then you are good to go. Ticketing systems such as GGUS, SSB have their own dedicated platform for issueing tickets. These tickets give an insight to the operational teams to make important decisions when outages happen which means we would want them in the AlertManager. There were no solutions than using AlertManager API endpoints which give access to CRUD operations.</p>
+
+<h3 id="ggus">GGUS</h3>
+
+<div style="display: flex; flex-direction: column; align-items: center;">
+<img src="./assets/img/cern/ggus_parser.png" alt="drawing" width="300" />
+<span>GGUS parser diagram</span>
+</div>
+
+<p>GGUS Ticketing System web platform outputs data either in XML or CSV formats but Alertmanager requires data to be in specific JSON format. Thus, we developed a parser which is capable of parsing both formats which is configurable.</p>
+
+<p>ggus_parser has two components :-</p>
+<ul>
+  <li>parse - parses the XML or CSV data from the GGUS Ticketing System web platform</li>
+  <li>convert - converts the parsed data into JSON format and saves it to the disk.</li>
+</ul>
+
+<p>Let’s see an example</p>
+
+<p><em>GGUS Ticket (csv)</em></p>
+<pre><code class="language-CSV">Ticket-ID,Type,VO,Site,Priority,Resp. Unit,Status,Last Update,Subject,Scope
+147196,USER,cms,FZK-LCG2,urgent,NGI_DE,assigned,2020-07-14,FZK-LCG2: issues on data access,WLCG
+</code></pre>
+<p>Above is a ticket in CSV format which is parsed and converted into…</p>
+
+<p><em>GGUS Parsed Ticket (JSON)</em></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"TicketID"</span><span class="p">:</span><span class="w"> </span><span class="mi">147196</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USER"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"VO"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cms"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"Site"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FZK-LCG2"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"Priority"</span><span class="p">:</span><span class="w"> </span><span class="s2">"urgent"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ResponsibleUnit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NGI_DE"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"Status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"assigned"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"LastUpdate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1590670920"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"Subject"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FZK-LCG2: issues on data access"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"Scope"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WLCG"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="ssb">SSB</h3>
+
+<div style="display: flex; flex-direction: column; align-items: center;">
+<img src="./assets/img/cern/monit.png" alt="drawing" width="300" />
+<span>SSB parser diagram</span>
+</div>
+
+<p>What about SSB Ticketing System then?</p>
+
+<p>There was no need of parser for SSB Ticketing System. monit tool was already developed by CMS team. It queries InfluxDB/ES data sources in MONIT via Grafana proxy. The SSB alerts in JSON format is printed on std output. We piped stdout to .json file and saved it to the disk. This fulfills the goal of the parser.</p>
+
+<p>Ref :- <a target="_blank" href="https://github.com/dmwm/CMSMonitoring/blob/master/src/go/MONIT/monit.go">monit</a></p>
+
+<p>Below is an example of such query.</p>
+
+<p><code class="language-plaintext highlighter-rouge">monit -query=$query -dbname=$dbname -token=$token -dbid=$dbid &gt; ssb_data.json</code></p>
+
+<p>So far we have developed parser and found a way to convert both GGUS &amp; SSB alerts in JSON files. But still we are far away from ingesting them to AlertManager. Let’s see how we are doing it, shall we?</p>
+
+<h2 id="alerting-module">Alerting Module</h2>
+<p><br /></p>
+<div style="display: flex; flex-direction: column; align-items: center;">
+<img src="./assets/img/cern/alert_mod.png" alt="drawing" width="400" />
+<span>Alerting module diagram</span>
+</div>
+
+<h4 id="building-blocks">Building Blocks</h4>
+<ul>
+  <li>fetch</li>
+  <li>convert</li>
+  <li>post</li>
+  <li>get</li>
+  <li>delete</li>
+</ul>
+
+<p><span style="color:red">*now onwards we will call each ticket from GGUS/SSB as an alert</span></p>
+
+<p>Let’s discuss each block the alerting module is made up of.</p>
+<ul>
+  <li>fetch
+    <ul>
+      <li>fetches saved JSON GGUS or SSB data from the disk (ggus_parser or monit).</li>
+      <li>maintains a hashmap for last seen alerts so that in future we ignore them to avoid multiple copies. Hashmap is a key, value data structure with fast lookup operation. Here key is alertname and value is the alert data.</li>
+    </ul>
+  </li>
+  <li>convert
+    <ul>
+      <li>fetched alerts are ingested here.</li>
+      <li>those alerts get converted to JSON data which AlertManager API understands.</li>
+    </ul>
+  </li>
+  <li>post
+    <ul>
+      <li>converted JSON data which contains GGUS/SSB alerts is pushed to AlertManager through AlertManager API endpoints.</li>
+    </ul>
+  </li>
+  <li>get
+    <ul>
+      <li>few GGUS/SSB alerts do not have Ending Time, that means it will need to be handled gracefully when they are resolved. So we automate the process of deleting those alerts from AlertManager when they are resolved at the origin.</li>
+      <li>fetches GGUS/SSB alerts from AlertManager.</li>
+      <li>now each fetched alert are checked if it is present in the HashMap (we created in fetch method). If available that means it hasn’t been resolved yet. If it is not present in the Hashmap we deduce that the alert has been resolved and no need to keep it in the AlertManager.</li>
+      <li>bundles all resolved alerts.</li>
+    </ul>
+  </li>
+  <li>delete
+    <ul>
+      <li>all resolved alerts will now have End Time equals to present time.</li>
+      <li>all open ending alerts in AlertManager get new End Time which basically means they are deleted immediately.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="alerting-service">Alerting Service</h2>
+<p><br /></p>
+<div style="display: flex; flex-direction: column; align-items: center;">
+<img src="./assets/img/cern/alert_srv.png" alt="drawing" width="400" />
+<span>Alerting Service diagram</span>
+</div>
+
+<p>Now we are familiar with the parser, alerting module and their functionalities. We will know integrate them to create an alerting service.</p>
+
+<ul>
+  <li>Parser fetches data and saves to disk</li>
+  <li>Alerting module gets fetched data as input, converts it and pushes to AM.</li>
+  <li>This whole process is bundled as a Linux Service with three commands :-
+    <ul>
+      <li>start</li>
+      <li>stop</li>
+      <li>status</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Components</p>
+
+<ul>
+  <li>parser / monit</li>
+  <li>*.alerting module</li>
+</ul>
+
+<p>Alerting service -&gt; A linux service running both of these logics at a regular interval in the background.</p>
+
+<p>Configuration</p>
+
+<ul>
+  <li>AlertManager URL</li>
+  <li>Time Interval for the service</li>
+  <li>HTTP Timeout</li>
+  <li>Verbosity Level</li>
+  <li>GGUS
+    <ul>
+      <li>GGUS Format</li>
+      <li>VO</li>
+    </ul>
+  </li>
+  <li>SSB
+    <ul>
+      <li>Query</li>
+      <li>Token</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="alertmanager---one-place-for-all-alerts">AlertManager - one place for all alerts</h2>
+<p><br /></p>
+<div style="display: flex; flex-direction: column; align-items: center;">
+<img src="./assets/img/cern/am.png" alt="drawing" width="300" />
+<span>Diagram showing various sources pushing alerts to AM</span>
+</div>
+
+<p>Alerting services which have been developed push GGUS &amp; SSB alerts to AM at defined time interval.
+Grafana &amp; Prometheus push their alerts to AlertManager as well. AlertManager gives loads of features to handle alerts but it lacks proper UI. So, Karma Dashboard is used to fetch all alerts from AlertManager, and display them in nice and beautiful UI. Slack channels are configured to log alerts when they are fired in AlertManager.</p>
+
+<p>AlertManager, Slack and Karma give all required info for alerts to our Operational teams.</p>
+
+<h2 id="use-of-slack--karma">Use of Slack &amp; Karma</h2>
+
+<h4 id="slack">Slack</h4>
+<ul>
+  <li>Slack has defined channels for particular service alerts.</li>
+  <li>Users are notified about fired alerts.</li>
+  <li>AlertManager bots are at work.</li>
+</ul>
+
+<h4 id="karma">Karma</h4>
+<ul>
+  <li>A dashboard which pulls all alerts from AlertManager.</li>
+  <li>Availability of multi grids arrangement based on filters.</li>
+  <li>Concise and better view than AlertManager.</li>
+  <li>Wrote Dockerfile and Kubernetes config files.</li>
+</ul>
+
+<h2 id="intelligence-module">Intelligence Module</h2>
+<p><br /></p>
+<div style="display: flex; flex-direction: column; align-items: center;">
+<img src="./assets/img/cern/int/int_mod.jpg" alt="drawing" width="400" />
+<span>Intelligence module diagram</span>
+</div>
+
+<p>It is a data pipeline. Each components are independent of each other. One component receives the data, adds its logic and forwards the processed data to other component.</p>
+
+<p>Why data pipeline ?</p>
+<ul>
+  <li>Low coupling</li>
+  <li>Freedom of adding or removing components on demand.</li>
+  <li>Power of concurrency</li>
+</ul>
+
+<p>What it does ?</p>
+<ul>
+  <li>assigns proper severity levels to SSB/GGUS alerts which helps operators to understand the criticality of the infrastructure.
+Ex. If Number of Alerts with severity=”urgent” &gt; some threshold, then the infrastructure is in critical situation.</li>
+  <li>annotates Grafana Dashboards when Network or Database interventions.</li>
+  <li>predicts type of alerts and groups similar alerts with the help of Machine Learning.</li>
+  <li>adds applicable tutorial/instructions doc to alert, on following which an operator can solve the issue quickly.</li>
+</ul>
+
+<h4 id="building-blocks-1">Building Blocks</h4>
+<ul>
+  <li>Fetch Alerts</li>
+  <li>Preprocessing</li>
+  <li>Keyword Matching</li>
+  <li>Add Annotations</li>
+  <li>Machine Learning</li>
+  <li>Push Alert</li>
+  <li>Silence Alert</li>
+</ul>
+
+<h4 id="tools">Tools</h4>
+<ul>
+  <li>AlertManager</li>
+  <li>Grafana</li>
+</ul>
+
+<h4 id="fetch-alerts">Fetch Alerts</h4>
+
+<div style="display: flex; flex-direction: column; align-items: center;">
+<img src="./assets/img/cern/int/fetch_alerts.jpg" alt="drawing" width="250" />
+<span>Fetch Alerts diagram</span>
+</div>
+
+<ul>
+  <li>fetches all alerts from AlertManager</li>
+  <li>bundles them and put them on a channel.</li>
+  <li>channel (Analogy) - baggage belt at Airports. You put data into it, data will be picked up when required by other party.</li>
+</ul>
+
+<h4 id="preprocessing">Preprocessing</h4>
+
+<div style="display: flex; flex-direction: column; align-items: center;">
+<img src="./assets/img/cern/int/preprocessing.jpg" alt="drawing" width="450" />
+<span>Preprocessing diagram</span>
+</div>
+
+<ul>
+  <li>filtering based on configuration.</li>
+  <li>only filtered alerts are forwarded.</li>
+  <li>we also manage one map for keeping track of active silenced alerts to avoid redundant silences.</li>
+  <li>if an alert is already silenced that means it has been processed by the intelligence module before.</li>
+</ul>
+
+<h4 id="keyword-matching">Keyword Matching</h4>
+
+<div style="display: flex; flex-direction: column; align-items: center;">
+<img src="./assets/img/cern/int/keyword_matching.png" alt="drawing" width="350" />
+<span>Keyword Matching diagram</span>
+</div>
+
+<ul>
+  <li>analysis of Alerts showed us repetitive use of a few important keywords.</li>
+  <li>these keywords help in assigning severity levels.</li>
+  <li>searches for these keywords in alerts, if found we assign severity level mapped to that keyword.</li>
+</ul>
+
+<h4 id="add-annotations">Add Annotations</h4>
+
+<div style="display: flex; flex-direction: column; align-items: center;">
+<img src="./assets/img/cern/int/add_annotations.jpg" alt="drawing" width="350" />
+<span>Add Annotations diagram</span>
+</div>
+
+<ul>
+  <li>Grafana has dashboards which shows running services’ metrics in the form of graphs.</li>
+  <li>Grafana has add Annotation feature.</li>
+  <li>SSB alert mentioning intervention in network / DB affects these services.</li>
+  <li>pushes such interventions info in the form of annotations into Grafana dashboards.</li>
+</ul>
+
+<h4 id="push-alert">Push Alert</h4>
+
+<div style="display: flex; flex-direction: column; align-items: center;">
+<img src="./assets/img/cern/int/push_alert.jpg" alt="drawing" width="400" />
+<span>Push Alert diagram</span>
+</div>
+
+<ul>
+  <li>alerts with modified information are pushed to AlertManager</li>
+  <li>incoming alerts are then forwarded to Silence Alert.</li>
+</ul>
+
+<h4 id="silence-alert">Silence Alert</h4>
+
+<div style="display: flex; flex-direction: column; align-items: center;">
+<img src="./assets/img/cern/int/silence_alert.jpg" alt="drawing" width="250" />
+<span>Silence Alert diagram</span>
+</div>
+
+<ul>
+  <li>alerts which get modified and pushed to AlertManager get copied.</li>
+  <li>older alert is redundant</li>
+  <li>silences the older one for the duration of its lifetime.</li>
+</ul>
+
+<h2 id="alert-cli-tool">Alert CLI Tool</h2>
+
+<ul>
+  <li>gives a nice and clean CLI interface for getting alerts, their details are printed on the terminal itself either in tabular form or JSON format.</li>
+  <li>convenient option for operators who prefer command line tools.</li>
+  <li>comes with several options such as :-
+    <ul>
+      <li>service, severity, tag - Filters</li>
+      <li>sort - Sorting</li>
+      <li>details - For detailed information of an alert</li>
+      <li>json - information in JSON format</li>
+    </ul>
+  </li>
+</ul>
+
+<!-- ## Future Work
+
+- Evaluation of ElastAlert for setting alerts on ElasticSearch and integration of the same in this project.
+- Service which takes configuration for operator’s actions and pushes to AM so that it matches alerts with the actions.
+- Use of Machine Learning in intelligence module which will predict it’s severity info, priority and type.
+- Deployment of finalized project to k8s infrastructure. -->
+
+<h2 id="tools-used">Tools Used</h2>
+
+<ul>
+  <li>
+    <p>Programming Language</p>
+
+    <p><img style="margin-left:0px;" src="./assets/img/cern/logo/golang.png" /></p>
+  </li>
+  <li>
+    <p>Editor</p>
+
+    <div style="display:flex;">
+  <img style="margin-left:0px; margin-right:10px;" src="./assets/img/cern/logo/vim.svg" width="48px" />
+  <img style="margin-left:0px; margin-right:10px;" src="./assets/img/cern/logo/vccode.png" />
+  </div>
+  </li>
+  <li>
+    <p>Helper Tools</p>
+
+    <div style="display:flex;">
+  <img style="margin-left:0px; margin-right:10px;" src="./assets/img/cern/logo/github.png" />
+  <img style="margin-left:0px; margin-right:10px;" src="./assets/img/cern/logo/git.png" />
+  <img style="margin-left:0px; margin-right:10px;" src="./assets/img/cern/logo/golint.png" width="130px" />
+  </div>
+    <div style="display:flex;">
+  <img style="margin-left:0px; margin-right:10px;" src="./assets/img/cern/logo/ps.png" />
+  <img style="margin-left:0px; margin-right:10px;" src="./assets/img/cern/logo/gdocs.png" />
+  <img style="margin-left:0px; margin-right:10px;" src="./assets/img/cern/logo/gslides.png" />
+  </div>
+  </li>
+</ul>
+
+<h2 id="acknowledgements">Acknowledgements</h2>
+
+<p>I am thankful to my mentors for their invaluable guidance and support throught my GSoC journey.</p>
+
+<h3 id="mentor-details">Mentor details</h3>
+
+<div class="mentor-detail" style="display:flex;  ">
+<img style="margin-left:0px; margin-right:10px; border-radius: 100%; object-fit: cover;" src="https://avatars1.githubusercontent.com/u/125138?s=400&amp;v=4" height="50px" width="50" />
+ <a style="text-decoration:none;" href="mailto:vkuznet@protonmail.com">Valentin Kuznetsov <br /> Cornell University (US)</a>
+    </div>
+
+<div class="mentor-detail" style="display:flex;  ">
+<img style="margin-left:0px; margin-right:10px; border-radius: 100%; object-fit: cover;" src="https://www.etp.physik.uni-muenchen.de/pics/faces/legger_sm.jpg" height="50px" width="50" />
+ <a style="text-decoration:none;" href="mailto:federica.legger@to.infn.it">Federica Legger <br /> Universita e INFN Torino (IT)</a>
+    </div>
+
+<div class="mentor-detail" style="display:flex;  ">
+<img style="margin-left:0px; margin-right:10px; border-radius: 100%; object-fit: cover;" src="https://avatars1.githubusercontent.com/u/4405564?s=400&amp;v=4" height="50px" width="" />
+ <a style="text-decoration:none;" href="mailto:christian.ariza@gmail.com">Christian Ariza <br /> Universidad de los Andes (CO)</a>
+    </div>
+
+<h3 id="contact-me">Contact Me</h3>
+
+<div class="mentor-detail" style="display:flex; ">
+<img style="margin-left:0px; margin-right:10px; border-radius: 100%; object-fit: cover;" src="https://media-exp1.licdn.com/dms/image/C5603AQHqkA9LYEuZ8g/profile-displayphoto-shrink_200_200/0?e=1600905600&amp;v=beta&amp;t=hzBwovgJdEZq3ZdWMWP5uL-3_j-fpODD5ri05Vdd_uY" height="50px" width="" />
+ <a style="text-decoration:none;">Rahul Indra <br /> IIEST, Shibpur (IN)</a>
+    </div>
+
+<ul>
+  <li>Feel free to send me a mail at <a href="mailto:indrarahul2018@gmail.com">indrarahul2018@gmail.com</a></li>
+  <li>Raise issues if any at:
+    <ul>
+      <li><a target="_blank" href="https://github.com/dmwm/CMSMonitoring">CMSMonitoring</a></li>
+    </ul>
+  </li>
+</ul>
+
+        </article>
+      </div>
+
+      <p>Was the article Awesome-Sauce <i class="fas fa-laugh"></i>? Drop some ASauces <i class="fas fa-praying-hands"></i> !</p>
+
+      <div style="display: flex;" >
+        <a  id="submit_asauces" style="cursor: pointer;">
+        <img class="button" data-micron="tada"
+        style="margin-left:0; margin-right: 10px;"
+          id="submit_asauces"
+          src="https://img.icons8.com/color/48/000000/hand-holding-heart.png"
+          
+        />
+        </a>
+        <span style="margin-top:14px; font-size: 20px; font-weight: 800; color: black;" id="asauces">0</span>
+        <span style="margin-top:14px; font-size: 20px; font-weight: 800; color: black;"id="asauces">&nbsp;asauces</span>
+        <!-- <a href="#!"  >Ta da</a> -->
+      </div>
+    </div><footer class= "footer">
+    <p>Copyright© Rahul Indra 2020. All right reserved.</p>
+</footer>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+     <script type="text/javascript">
+  (function () {
+    const firebaseConfig = {
+      apiKey: "AIzaSyAmS2xkbdjWdR1wgg_VbPglVm-ijngV5K8",
+      authDomain: "my-website-27d6b.firebaseapp.com",
+      databaseURL: "https://my-website-27d6b.firebaseio.com",
+      projectId: "my-website-27d6b",
+      storageBucket: "my-website-27d6b.appspot.com",
+      messagingSenderId: "1046948300270",
+      appId: "1:1046948300270:web:bff2c522cfa8eeddc9faff",
+      measurementId: "G-GT9SLHYWNG",
+    };
+    firebase.initializeApp(firebaseConfig);
+    var db = firebase.firestore();
+    var docRef = db.collection("asauces").doc("ZoalWNiIjmsS8iDVbNXI");
+
+    
+    var push_to_firebase = function () {
+      var currentVal = 0
+     
+      docRef
+        .get()
+        .then(function (doc) {
+          if (doc.exists) {
+              currentVal = doc.data()["asauces"];
+            docRef.set({
+              asauces: currentVal + 1,
+            });
+            document.getElementById("asauces").innerHTML = currentVal+1;
+          } else {
+            // doc.data() will be undefined in this case
+            console.log("No such document!");
+          }
+        })
+        .catch(function (error) {
+          console.log("Error getting document:", error);
+        });
+
+      
+    };
+
+    document
+      .getElementById("submit_asauces")
+      .addEventListener("click", push_to_firebase);
+
+    
+      docRef
+        .get()
+        .then(function (doc) {
+          if (doc.exists) {
+            document.getElementById("asauces").innerHTML = doc.data()["asauces"];
+          } else {
+            // doc.data() will be undefined in this case
+            console.log("No such document!");
+          }
+        })
+        .catch(function (error) {
+          console.log("Error getting document:", error);
+        });
+  })();
+</script>
+
+  </body>
+</html>
