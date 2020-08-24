@@ -42,8 +42,8 @@
 <meta property="og:title" content="Intelligent Alert system for HEP experiments" />
 <meta name="author" content="Rahul Indra" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="The project aims to develop an intelligent and reliable monitoring system for large distributed services to monitor their status and reduce operational costs. The distributed computing infrastructure is the backbone of all computing activities of the CMS experiments at CERN. These distributed services include central services for authentication, workload management, data management, databases, etc." />
-<meta property="og:description" content="The project aims to develop an intelligent and reliable monitoring system for large distributed services to monitor their status and reduce operational costs. The distributed computing infrastructure is the backbone of all computing activities of the CMS experiments at CERN. These distributed services include central services for authentication, workload management, data management, databases, etc." />
+<meta name="description" content="The project aims to develop an intelligent and reliable monitoring system for large distributed services, in order to monitor their status and reduce operational costs. The distributed computing infrastructure is the backbone of all computing activities of the CMS experiments at CERN. These distributed services include central services for authentication, workload management, data management, databases, etc." />
+<meta property="og:description" content="The project aims to develop an intelligent and reliable monitoring system for large distributed services, in order to monitor their status and reduce operational costs. The distributed computing infrastructure is the backbone of all computing activities of the CMS experiments at CERN. These distributed services include central services for authentication, workload management, data management, databases, etc." />
 <link rel="canonical" href="http://localhost:4000/2020/07/24/google-summer-of-code.html" />
 <meta property="og:url" content="http://localhost:4000/2020/07/24/google-summer-of-code.html" />
 <meta property="og:site_name" content="Rahul Indra" />
@@ -54,7 +54,7 @@
 <meta name="twitter:site" content="@RahulIndra12" />
 <meta name="twitter:creator" content="@Rahul Indra" />
 <script type="application/ld+json">
-{"dateModified":"2020-07-24T00:00:00+05:30","datePublished":"2020-07-24T00:00:00+05:30","@type":"BlogPosting","headline":"Intelligent Alert system for HEP experiments","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2020/07/24/google-summer-of-code.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000./assets/img/cern/gsoc_cern.png"},"name":"Rahul Indra"},"url":"http://localhost:4000/2020/07/24/google-summer-of-code.html","author":{"@type":"Person","name":"Rahul Indra"},"description":"The project aims to develop an intelligent and reliable monitoring system for large distributed services to monitor their status and reduce operational costs. The distributed computing infrastructure is the backbone of all computing activities of the CMS experiments at CERN. These distributed services include central services for authentication, workload management, data management, databases, etc.","@context":"https://schema.org"}</script>
+{"dateModified":"2020-07-24T00:00:00+05:30","datePublished":"2020-07-24T00:00:00+05:30","@type":"BlogPosting","headline":"Intelligent Alert system for HEP experiments","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2020/07/24/google-summer-of-code.html"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/img/cern/gsoc_cern.png"},"name":"Rahul Indra"},"url":"http://localhost:4000/2020/07/24/google-summer-of-code.html","author":{"@type":"Person","name":"Rahul Indra"},"description":"The project aims to develop an intelligent and reliable monitoring system for large distributed services, in order to monitor their status and reduce operational costs. The distributed computing infrastructure is the backbone of all computing activities of the CMS experiments at CERN. These distributed services include central services for authentication, workload management, data management, databases, etc.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -122,15 +122,15 @@
 
   
   
-    10 minute read
+    11 minute read
   
 
             </span>
           </div>
-           <p><img width="700px" src="./assets/img/cern/gsoc_cern.png" /> <br>
-The project aims to develop an intelligent and reliable monitoring system for large distributed services to monitor their status and reduce operational costs. The distributed computing infrastructure is the backbone of all computing activities of the CMS experiments at CERN. These distributed services include central services for authentication, workload management, data management, databases, etc.</p>
+           <p><img src="./assets/img/cern/gsoc_cern.png" />
+The project aims to develop an intelligent and reliable monitoring system for large distributed services, in order to monitor their status and reduce operational costs. The distributed computing infrastructure is the backbone of all computing activities of the CMS experiments at CERN. These distributed services include central services for authentication, workload management, data management, databases, etc.</p>
 
-<p>Very large amounts of information are produced from this infrastructure. These include various anomalies, issues, outages, and those involving scheduled maintenance. The sheer volume and variety of information make it too large to be handled by the operational team. Hence we aim to build an intelligent system that will detect, analyze and predict the abnormal behaviors of the infrastructure.</p>
+<p>Very large amounts of information are produced from this infrastructure. These include various anomalies, issues, outages, and those involving scheduled maintenance. The sheer volume and variety of information makes it too large to be handled by the operational team. Hence we aim to build an intelligent system that will detect, analyze and predict the abnormal behaviors of the infrastructure.</p>
 
 <p>Quick Links :-</p>
 
@@ -159,9 +159,10 @@ The project aims to develop an intelligent and reliable monitoring system for la
   </li>
   <li><a href="#alerting-service" id="markdown-toc-alerting-service">Alerting Service</a></li>
   <li><a href="#alertmanager---one-place-for-all-alerts" id="markdown-toc-alertmanager---one-place-for-all-alerts">AlertManager - one place for all alerts</a></li>
-  <li><a href="#use-of-slack--karma" id="markdown-toc-use-of-slack--karma">Use of Slack &amp; Karma</a>    <ul>
+  <li><a href="#use-of-slack-karma-and-alert-cli-tool" id="markdown-toc-use-of-slack-karma-and-alert-cli-tool">Use of Slack, Karma and Alert CLI Tool</a>    <ul>
       <li><a href="#slack" id="markdown-toc-slack">Slack</a></li>
       <li><a href="#karma" id="markdown-toc-karma">Karma</a></li>
+      <li><a href="#alert-cli-tool" id="markdown-toc-alert-cli-tool">Alert CLI Tool</a></li>
     </ul>
   </li>
   <li><a href="#intelligence-module" id="markdown-toc-intelligence-module">Intelligence Module</a>    <ul>
@@ -173,10 +174,11 @@ The project aims to develop an intelligent and reliable monitoring system for la
       <li><a href="#add-annotations" id="markdown-toc-add-annotations">Add Annotations</a></li>
       <li><a href="#push-alert" id="markdown-toc-push-alert">Push Alert</a></li>
       <li><a href="#silence-alert" id="markdown-toc-silence-alert">Silence Alert</a></li>
+      <li><a href="#delete-old-silences" id="markdown-toc-delete-old-silences">Delete Old Silences</a></li>
     </ul>
   </li>
-  <li><a href="#alert-cli-tool" id="markdown-toc-alert-cli-tool">Alert CLI Tool</a></li>
   <li><a href="#tools-used" id="markdown-toc-tools-used">Tools Used</a></li>
+  <li><a href="#major-prs" id="markdown-toc-tools-used">Major PRs</a></li>
   <li><a href="#acknowledgements" id="markdown-toc-acknowledgements">Acknowledgements</a>    <ul>
       <li><a href="#mentor-details" id="markdown-toc-mentor-details">Mentor details</a></li>
       <li><a href="#contact-me" id="markdown-toc-contact-me">Contact Me</a></li>
@@ -209,7 +211,7 @@ The project aims to develop an intelligent and reliable monitoring system for la
 
 <p>The operational teams deal with a large amount of alert notifications and tickets and generally they face difficulties in handling them manually.</p>
 
-<p>So, in short we need to automate the mundane process which allows op-teams to focus more on the finding solution for the source of alerts rather than searching, filtering and collecting the alerts and tickets.</p>
+<p>So, in short, we need to automate the mundane process which allows op-teams to focus more on finding solutions for the source of alerts rather than searching, filtering and collecting the alerts and tickets.</p>
 
 <h2 id="solution">Solution</h2>
 <p>We propose an intelligent alert management system for the aforementioned problem.</p>
@@ -226,17 +228,17 @@ The project aims to develop an intelligent and reliable monitoring system for la
 
 <p>The system’s abilities include, but are not limited to :-</p>
 <ul>
-  <li>Consuming tickets from various ticketing systems. (GGUS &amp; SSB have been implemented).But being a modular architecture, there’s always a scope to add more services in future.</li>
-  <li>Extracting alerts which are relevant to the specific CMS services which gets affected by such interventions.</li>
-  <li>Intelligently grouping and ranking of the alerts.</li>
-  <li>Silencing false alerts from services which starts bombarding the system when a node goes down. So instead of logging multiple alerts from the services running on that node. We generate one single alert annotating that a specific node is down.</li>
+  <li>Consuming tickets from various ticketing systems. (GGUS &amp; SSB have been implemented). It is to be noted that being a modular architecture, there’s always a scope to add more services in future.</li>
+  <li>Extracting alerts relevant to the specific CMS services which get affected by such interventions.</li>
+  <li>Intelligent grouping and ranking of the alerts.</li>
+  <li>Silencing false alerts that start bombarding the system when a node goes down. So instead of logging multiple alerts from the services running on that node, we generate one single alert annotating that a specific node is down.</li>
   <li>Making them visible in the monitoring tools such as Grafana, Slack, Karma etc.</li>
 </ul>
 
 <h2 id="proposed-architecture">Proposed Architecture</h2>
 
 <div style="display: flex; flex-direction: column; align-items: center;">
-<img src="./assets/img/cern/full_arch2.png" alt="drawing" width="700px" />
+<img src="./assets/img/cern/full_arch2.png" alt="drawing" width="1200" />
 <span>Full Architecture</span>
 </div>
 
@@ -261,11 +263,11 @@ The project aims to develop an intelligent and reliable monitoring system for la
   <li>Karma</li>
 </ul>
 
-<p>Each developed components are the building blocks of the intelligent system. Let us discuss their implementation, features one by one.</p>
+<p>All of these components been developed, are building blocks of the intelligent system. Let us discuss their implementation and features one by one.</p>
 
 <h2 id="parsers">Parsers</h2>
 
-<p>AlertManager is an extensive tool for storing alerts from various sources. Prometheus, Grafana are the two most supported tools for AlertManager where you can simply define alert rules and then you are good to go. Ticketing systems such as GGUS, SSB have their own dedicated platform for issueing tickets. These tickets give an insight to the operational teams to make important decisions when outages happen which means we would want them in the AlertManager. There were no solutions than using AlertManager API endpoints which give access to CRUD operations.</p>
+<p>AlertManager is an extensive tool for storing alerts from various sources. Prometheus, Grafana are the two most supported tools for AlertManager where you can simply define alert rules and you are good to go. Ticketing systems such as GGUS, SSB have their own dedicated platform for issueing tickets. These tickets provide useful insights to the operational teams to make important decisions when outages happen, therefore we would want them in the AlertManager. So far, there were no solutions other than using AlertManager API endpoints which give access to CRUD operations.</p>
 
 <h3 id="ggus">GGUS</h3>
 
@@ -274,7 +276,7 @@ The project aims to develop an intelligent and reliable monitoring system for la
 <span>GGUS parser diagram</span>
 </div>
 
-<p>GGUS Ticketing System web platform outputs data either in XML or CSV formats but Alertmanager requires data to be in specific JSON format. Thus, we developed a parser which is capable of parsing both formats which is configurable.</p>
+<p>GGUS Ticketing System web platform outputs data either in XML or CSV formats but Alertmanager requires data to be in specific JSON format. Hence, we developed a configurable parser which is capable of parsing both formats.</p>
 
 <p>ggus_parser has two components :-</p>
 <ul>
@@ -315,15 +317,15 @@ The project aims to develop an intelligent and reliable monitoring system for la
 
 <p>What about SSB Ticketing System then?</p>
 
-<p>There was no need of parser for SSB Ticketing System. monit tool was already developed by CMS team. It queries InfluxDB/ES data sources in MONIT via Grafana proxy. The SSB alerts in JSON format is printed on std output. We piped stdout to .json file and saved it to the disk. This fulfills the goal of the parser.</p>
+<p>There was no need of parser for SSB Ticketing System. monit tool was already developed by CMS team. It queries InfluxDB/ES data sources in MONIT via Grafana proxy. The SSB alerts in JSON format are printed on std output. We piped stdout to a .json file and saved it to the disk. This fulfills the goal of the parser.</p>
 
 <p>Ref :- <a target="_blank" href="https://github.com/dmwm/CMSMonitoring/blob/master/src/go/MONIT/monit.go">monit</a></p>
 
-<p>Below is an example of such query.</p>
+<p>Below is an example of such a query.</p>
 
 <p><code class="language-plaintext highlighter-rouge">monit -query=$query -dbname=$dbname -token=$token -dbid=$dbid &gt; ssb_data.json</code></p>
 
-<p>So far we have developed parser and found a way to convert both GGUS &amp; SSB alerts in JSON files. But still we are far away from ingesting them to AlertManager. Let’s see how we are doing it, shall we?</p>
+<p>So far we have developed the parser and found a way to convert both GGUS &amp; SSB alerts to JSON files. But still we are far away from ingesting them to AlertManager. Let’s see how we are doing it.</p>
 
 <h2 id="alerting-module">Alerting Module</h2>
 <p><br /></p>
@@ -366,14 +368,14 @@ The project aims to develop an intelligent and reliable monitoring system for la
     <ul>
       <li>few GGUS/SSB alerts do not have Ending Time, that means it will need to be handled gracefully when they are resolved. So we automate the process of deleting those alerts from AlertManager when they are resolved at the origin.</li>
       <li>fetches GGUS/SSB alerts from AlertManager.</li>
-      <li>now each fetched alert are checked if it is present in the HashMap (we created in fetch method). If available that means it hasn’t been resolved yet. If it is not present in the Hashmap we deduce that the alert has been resolved and no need to keep it in the AlertManager.</li>
+      <li>now each fetched alert is checked to see if it is present in the HashMap (which we created in fetch method). If it’s available that means it hasn’t been resolved yet. If it is not present in the Hashmap we deduce that the alert has been resolved and there’s no need to keep it in the AlertManager.</li>
       <li>bundles all resolved alerts.</li>
     </ul>
   </li>
   <li>delete
     <ul>
-      <li>all resolved alerts will now have End Time equals to present time.</li>
-      <li>all open ending alerts in AlertManager get new End Time which basically means they are deleted immediately.</li>
+      <li>all resolved alerts will now have End Time equal to present time.</li>
+      <li>all open ending alerts in AlertManager get new End Time, i.e., they are deleted immediately.</li>
     </ul>
   </li>
 </ul>
@@ -385,10 +387,10 @@ The project aims to develop an intelligent and reliable monitoring system for la
 <span>Alerting Service diagram</span>
 </div>
 
-<p>Now we are familiar with the parser, alerting module and their functionalities. We will know integrate them to create an alerting service.</p>
+<p>Now we are familiar with the parser, alerting module and their functionalities. We will now integrate them to create an alerting service.</p>
 
 <ul>
-  <li>Parser fetches data and saves to disk</li>
+  <li>Parser fetches data and saves it to disk</li>
   <li>Alerting module gets fetched data as input, converts it and pushes to AM.</li>
   <li>This whole process is bundled as a Linux Service with three commands :-
     <ul>
@@ -433,15 +435,15 @@ The project aims to develop an intelligent and reliable monitoring system for la
 <p><br /></p>
 <div style="display: flex; flex-direction: column; align-items: center;">
 <img src="./assets/img/cern/am.png" alt="drawing" width="300" />
-<span>Diagram showing various sources pushing alerts to AM</span>
+<span>Diagram showing various sources pushing alerts to AM and admins interacting with AM with various tools.</span>
 </div>
 
-<p>Alerting services which have been developed push GGUS &amp; SSB alerts to AM at defined time interval.
-Grafana &amp; Prometheus push their alerts to AlertManager as well. AlertManager gives loads of features to handle alerts but it lacks proper UI. So, Karma Dashboard is used to fetch all alerts from AlertManager, and display them in nice and beautiful UI. Slack channels are configured to log alerts when they are fired in AlertManager.</p>
+<p>Alerting services which have been developed push GGUS &amp; SSB alerts to AM at defined time intervals.
+Grafana &amp; Prometheus push their alerts to AlertManager as well. AlertManager gives loads of features to handle alerts but it lacks proper UI. So, Karma Dashboard is used to fetch all alerts from AlertManager, and display them in a decent UI. Slack channels are configured to log alerts when they are fired in AlertManager.</p>
 
 <p>AlertManager, Slack and Karma give all required info for alerts to our Operational teams.</p>
 
-<h2 id="use-of-slack--karma">Use of Slack &amp; Karma</h2>
+<h2 id="use-of-slack-karma-and-alert-cli-tool">Use of Slack, Karma and Alert CLI Tool</h2>
 
 <h4 id="slack">Slack</h4>
 <ul>
@@ -450,22 +452,77 @@ Grafana &amp; Prometheus push their alerts to AlertManager as well. AlertManager
   <li>AlertManager bots are at work.</li>
 </ul>
 
+<div style="display: flex; flex-direction: column; align-items: center;">
+<img src="./assets/img/cern/amTools/slack1.png" alt="drawing" />
+<span>GGUS alerts in Slack</span>
+</div>
+
+<div style="display: flex; flex-direction: column; align-items: center;">
+<img src="./assets/img/cern/amTools/slack2.png" alt="drawing" />
+<span>SSB alerts in Slack</span>
+</div>
+
 <h4 id="karma">Karma</h4>
 <ul>
   <li>A dashboard which pulls all alerts from AlertManager.</li>
   <li>Availability of multi grids arrangement based on filters.</li>
-  <li>Concise and better view than AlertManager.</li>
+  <li>More concise and better view than AlertManager.</li>
   <li>Wrote Dockerfile and Kubernetes config files.</li>
 </ul>
+
+<div style="display: flex; flex-direction: column; align-items: center;">
+<img src="./assets/img/cern/amTools/karma1.png" alt="drawing" />
+<span>Karma Dashboard view-1</span>
+</div>
+<p><br /></p>
+<div style="display: flex; flex-direction: column; align-items: center;">
+<img src="./assets/img/cern/amTools/karma2.png" alt="drawing" />
+<span>Karma Dashboard view-2</span>
+</div>
+
+<h4 id="alert-cli-tool">Alert CLI Tool</h4>
+
+<ul>
+  <li>gives a nice and clean CLI interface for getting alerts, their details are printed on the terminal itself either in tabular form or JSON format.</li>
+  <li>convenient option for operators who prefer command line tools.</li>
+  <li>comes with several options such as :-
+    <ul>
+      <li>service, severity, tag - Filters</li>
+      <li>sort - Sorting</li>
+      <li>details - For detailed information of an alert</li>
+      <li>json - information in JSON format</li>
+    </ul>
+  </li>
+</ul>
+
+<div style="display: flex; flex-direction: column; align-items: center;">
+<img src="./assets/img/cern/amTools/alert_tool1.png" alt="drawing" />
+<span>Alert CLI Tool printing all alerts in the alertmanager of type SSB services which are sorted over duration of each alert.</span>
+</div>
+<p><br /></p>
+<div style="display: flex; flex-direction: column; align-items: center;">
+<img src="./assets/img/cern/amTools/alert_tool2.png" alt="drawing" />
+<span>Alert CLI Tool printing all alerts in the alertmanager whose severity values are "high".</span>
+</div>
+<p><br /></p>
+<div style="display: flex; flex-direction: column; align-items: center;">
+<img src="./assets/img/cern/amTools/alert_tool3.png" alt="drawing" />
+<span>Alert CLI Tool printing a specific alert in detail.</span>
+</div>
+<p><br /></p>
+<div style="display: flex; flex-direction: column; align-items: center;">
+<img src="./assets/img/cern/amTools/alert_tool4.png" alt="drawing" />
+<span>Alert CLI Tool printing a specific alert in detail in json format.</span>
+</div>
 
 <h2 id="intelligence-module">Intelligence Module</h2>
 <p><br /></p>
 <div style="display: flex; flex-direction: column; align-items: center;">
-<img src="./assets/img/cern/int/int_mod.jpg" alt="drawing" width="400" />
+<img src="./assets/img/cern/int/int_mod.png" alt="drawing" width="400" />
 <span>Intelligence module diagram</span>
 </div>
 
-<p>It is a data pipeline. Each components are independent of each other. One component receives the data, adds its logic and forwards the processed data to other component.</p>
+<p>It is a data pipeline. All components are independent of each other. One component receives the data, adds its logic and forwards the processed data to another component.</p>
 
 <p>Why data pipeline ?</p>
 <ul>
@@ -478,9 +535,10 @@ Grafana &amp; Prometheus push their alerts to AlertManager as well. AlertManager
 <ul>
   <li>assigns proper severity levels to SSB/GGUS alerts which helps operators to understand the criticality of the infrastructure.
 Ex. If Number of Alerts with severity=”urgent” &gt; some threshold, then the infrastructure is in critical situation.</li>
-  <li>annotates Grafana Dashboards when Network or Database interventions.</li>
-  <li>predicts type of alerts and groups similar alerts with the help of Machine Learning.</li>
-  <li>adds applicable tutorial/instructions doc to alert, on following which an operator can solve the issue quickly.</li>
+  <li>annotates Grafana Dashboards when there are Network or Database interventions.</li>
+  <li>predicts the type of alerts and groups similar alerts with the help of Machine Learning.</li>
+  <li>adds applicable tutorial/instructions doc to alert, following which an operator can solve the issue quickly.</li>
+  <li>deletes old silences for those alerts which have open ending (such as GGUS alerts and some SSB alerts having no End time).</li>
 </ul>
 
 <h4 id="building-blocks-1">Building Blocks</h4>
@@ -492,6 +550,7 @@ Ex. If Number of Alerts with severity=”urgent” &gt; some threshold, then the
   <li>Machine Learning</li>
   <li>Push Alert</li>
   <li>Silence Alert</li>
+  <li>Delete Old Silences</li>
 </ul>
 
 <h4 id="tools">Tools</h4>
@@ -509,7 +568,7 @@ Ex. If Number of Alerts with severity=”urgent” &gt; some threshold, then the
 
 <ul>
   <li>fetches all alerts from AlertManager</li>
-  <li>bundles them and put them on a channel.</li>
+  <li>bundles them and puts them on a channel.</li>
   <li>channel (Analogy) - baggage belt at Airports. You put data into it, data will be picked up when required by other party.</li>
 </ul>
 
@@ -548,7 +607,7 @@ Ex. If Number of Alerts with severity=”urgent” &gt; some threshold, then the
 </div>
 
 <ul>
-  <li>Grafana has dashboards which shows running services’ metrics in the form of graphs.</li>
+  <li>Grafana has dashboards which shows metrics of running services in the form of graphs.</li>
   <li>Grafana has add Annotation feature.</li>
   <li>SSB alert mentioning intervention in network / DB affects these services.</li>
   <li>pushes such interventions info in the form of annotations into Grafana dashboards.</li>
@@ -569,7 +628,7 @@ Ex. If Number of Alerts with severity=”urgent” &gt; some threshold, then the
 <h4 id="silence-alert">Silence Alert</h4>
 
 <div style="display: flex; flex-direction: column; align-items: center;">
-<img src="./assets/img/cern/int/silence_alert.jpg" alt="drawing" width="250" />
+<img src="./assets/img/cern/int/silence_alert.png" alt="drawing" width="400" />
 <span>Silence Alert diagram</span>
 </div>
 
@@ -579,26 +638,25 @@ Ex. If Number of Alerts with severity=”urgent” &gt; some threshold, then the
   <li>silences the older one for the duration of its lifetime.</li>
 </ul>
 
-<h2 id="alert-cli-tool">Alert CLI Tool</h2>
+<h4 id="delete-old-silences">Delete Old Silences</h4>
+
+<div style="display: flex; flex-direction: column; align-items: center;">
+<img src="./assets/img/cern/int/delete_old_silences.png" alt="drawing" width="400" />
+<span>Silence Alert diagram</span>
+</div>
 
 <ul>
-  <li>gives a nice and clean CLI interface for getting alerts, their details are printed on the terminal itself either in tabular form or JSON format.</li>
-  <li>convenient option for operators who prefer command line tools.</li>
-  <li>comes with several options such as :-
-    <ul>
-      <li>service, severity, tag - Filters</li>
-      <li>sort - Sorting</li>
-      <li>details - For detailed information of an alert</li>
-      <li>json - information in JSON format</li>
-    </ul>
-  </li>
+  <li>Alerts like GGUS &amp; some SSB tickets have open ending time (That means we don’t know for how long they will be in AM).</li>
+  <li>So we wait for those alerts to get resolved, whenever they are resolved they are deleted from the AM by alerting services.</li>
+  <li>But the silences will remain, right ? So, this component takes care of such cases.</li>
+  <li>It delete those silences which get resolved.</li>
 </ul>
 
 <!-- ## Future Work
 
 - Evaluation of ElastAlert for setting alerts on ElasticSearch and integration of the same in this project.
 - Service which takes configuration for operator’s actions and pushes to AM so that it matches alerts with the actions.
-- Use of Machine Learning in intelligence module which will predict it’s severity info, priority and type.
+- Use of Machine Learning in intelligence module which will predict its severity info, priority and type.
 - Deployment of finalized project to k8s infrastructure. -->
 
 <h2 id="tools-used">Tools Used</h2>
@@ -632,10 +690,39 @@ Ex. If Number of Alerts with severity=”urgent” &gt; some threshold, then the
   </div>
   </li>
 </ul>
-
+<h2 id="major-prs">Major PRs</h2>
+<ul>
+  <li>
+    <a target="_blank" href="https://github.com/dmwm/CMSMonitoring/pull/48">/48</a>
+  </li>
+  <li>
+    <a target="_blank" href="https://github.com/dmwm/CMSMonitoring/pull/50">/50</a>
+  </li>
+  <li>
+    <a target="_blank" href="https://github.com/dmwm/CMSMonitoring/pull/51">/51</a>
+  </li>
+  <li>
+    <a target="_blank" href="https://github.com/dmwm/CMSMonitoring/pull/61">/61</a>
+  </li>
+  <li>
+    <a target="_blank" href="https://github.com/dmwm/CMSMonitoring/pull/63">/63</a>
+  </li>
+  <li>
+    <a target="_blank" href="https://github.com/dmwm/CMSMonitoring/pull/65">/65</a>
+  </li>
+  <li>
+    <a target="_blank" href="https://github.com/dmwm/CMSMonitoring/pull/67">/67</a>
+  </li>
+  <li>
+    <a target="_blank" href="https://github.com/dmwm/CMSMonitoring/pull/83">/83</a>
+  </li>
+  <li>
+    <a target="_blank" href="https://github.com/dmwm/CMSMonitoring/pull/89">/89</a>
+  </li>
+</ul>
 <h2 id="acknowledgements">Acknowledgements</h2>
 
-<p>I am thankful to my mentors for their invaluable guidance and support throught my GSoC journey.</p>
+<p>I am thankful to my mentors for their invaluable guidance and support throughout my GSoC journey.</p>
 
 <h3 id="mentor-details">Mentor details</h3>
 
@@ -669,6 +756,7 @@ Ex. If Number of Alerts with severity=”urgent” &gt; some threshold, then the
     </ul>
   </li>
 </ul>
+
 
         </article>
       </div>
