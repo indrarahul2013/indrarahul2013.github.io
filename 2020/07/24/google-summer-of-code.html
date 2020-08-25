@@ -128,9 +128,12 @@
             </span>
           </div>
            <p><img src="./assets/img/cern/gsoc_cern.png" />
-The project aims to develop an intelligent and reliable monitoring system for large distributed services, in order to monitor their status and reduce operational costs. The distributed computing infrastructure is the backbone of all computing activities of the CMS experiments at CERN. These distributed services include central services for authentication, workload management, data management, databases, etc.</p>
+            <h5>Abstract</h5>
+            <p style="font-size: small;">(from GSOC '20 project list)</p>
+<p>The project aims to develop an intelligent and reliable monitoring system for large distributed services, in order to monitor their status and reduce operational costs. The distributed computing infrastructure is the backbone of all computing activities of the CMS experiments at CERN. These distributed services include central services for authentication, workload management, data management, databases, etc.</p>
 
 <p>Very large amounts of information are produced from this infrastructure. These include various anomalies, issues, outages, and those involving scheduled maintenance. The sheer volume and variety of information makes it too large to be handled by the operational team. Hence we aim to build an intelligent system that will detect, analyze and predict the abnormal behaviors of the infrastructure.</p>
+
 
 <p>Quick Links :-</p>
 
@@ -192,12 +195,12 @@ The project aims to develop an intelligent and reliable monitoring system for la
 
 <p>The current monitoring system makes use of following tools :-</p>
 <ul>
-  <li>ElasticSearch</li>
-  <li>Kafka</li>
-  <li>Grafana</li>
-  <li>Prometheus</li>
-  <li>AlertManager</li>
-  <li>VictoriaMetrics</li>
+  <li><a target="_blank" href="https://www.elastic.co/elasticsearch/">ElasticSearch</a></li>
+  <li><a target="_blank" href="https://kafka.apache.org/">Kafka</a></li>
+  <li><a target="_blank" href="https://grafana.com">Grafana</a></li>
+  <li><a target="_blank" href="https://prometheus.io/">Prometheus</a></li>
+  <li><a target="_blank" href="https://prometheus.io/docs/alerting/latest/alertmanager/">AlertManager</a></li>
+  <li><a target="_blank" href="https://victoriametrics.com/">VictoriaMetrics</a></li>
   <li>Custom Solutions like GGUS, SSB system etc.</li>
 </ul>
 
@@ -209,7 +212,7 @@ The project aims to develop an intelligent and reliable monitoring system for la
   <li>scheduled maintenance.</li>
 </ul>
 
-<p>The operational teams deal with a large amount of alert notifications and tickets and generally they face difficulties in handling them manually.</p>
+<p>The operational teams deal with a large amount of alert notifications and tickets and generally they face difficulties in handling them manually (eg. visiting the web portals of GGUS and SSB to check alerts, manually silencing false alerts etc. ).</p>
 
 <p>So, in short, we need to automate the mundane process which allows op-teams to focus more on finding solutions for the source of alerts rather than searching, filtering and collecting the alerts and tickets.</p>
 
@@ -228,7 +231,7 @@ The project aims to develop an intelligent and reliable monitoring system for la
 
 <p>The system’s abilities include, but are not limited to :-</p>
 <ul>
-  <li>Consuming tickets from various ticketing systems. (GGUS &amp; SSB have been implemented). It is to be noted that being a modular architecture, there’s always a scope to add more services in future.</li>
+  <li>Consuming tickets from various ticketing systems. (<a target="_blank" href="https://twiki.cern.ch/twiki/bin/view/LCG/GgusOperations">GGUS</a> &amp; <a target="_blank" href="https://cern.service-now.com/service-portal?id=service_status_board">SSB</a> have been implemented). It is to be noted that being a modular architecture, there’s always a scope to add more services in future.</li>
   <li>Extracting alerts relevant to the specific CMS services which get affected by such interventions.</li>
   <li>Intelligent grouping and ranking of the alerts.</li>
   <li>Silencing false alerts that start bombarding the system when a node goes down. So instead of logging multiple alerts from the services running on that node, we generate one single alert annotating that a specific node is down.</li>
@@ -256,11 +259,11 @@ The project aims to develop an intelligent and reliable monitoring system for la
 <p>Third-party tools being used are :-</p>
 
 <ul>
-  <li>Grafana</li>
-  <li>Prometheus</li>
-  <li>AlertManager</li>
-  <li>Slack</li>
-  <li>Karma</li>
+  <li><a target="_blank" href="https://grafana.com">Grafana</a></li>
+  <li><a target="_blank" href="https://prometheus.io/">Prometheus</a></li>
+  <li><a target="_blank" href="https://prometheus.io/docs/alerting/latest/alertmanager/">AlertManager</a></li>
+  <li><a target="_blank" href="https://slack.com">Slack</a></li>
+  <li><a target="_blank" href="https://github.com/prymitive/karma">Karma</a></li>
 </ul>
 
 <p>All of these components been developed, are building blocks of the intelligent system. Let us discuss their implementation and features one by one.</p>
@@ -555,8 +558,8 @@ Ex. If Number of Alerts with severity=”urgent” &gt; some threshold, then the
 
 <h4 id="tools">Tools</h4>
 <ul>
-  <li>AlertManager</li>
-  <li>Grafana</li>
+  <li><a target="_blank" href="https://grafana.com">Grafana</a></li>
+  <li><a target="_blank" href="https://prometheus.io/docs/alerting/latest/alertmanager/">AlertManager</a></li>
 </ul>
 
 <h4 id="fetch-alerts">Fetch Alerts</h4>
@@ -776,8 +779,10 @@ Ex. If Number of Alerts with severity=”urgent” &gt; some threshold, then the
         <span style="margin-top:14px; font-size: 20px; font-weight: 800; color: black;"id="asauces">&nbsp;asauces</span>
         <!-- <a href="#!"  >Ta da</a> -->
       </div>
+      
     </div><footer class= "footer">
     <p>Copyright© Rahul Indra 2020. All right reserved.</p>
+    <p>Favicon belongs to Google Summer of Code Organization</p>
 </footer>
     <script
       id="MathJax-script"
